@@ -11,13 +11,19 @@ int my_pow(int a,int b)
 }
 
 int main()
-{
-	char input[6],output[32*4];
-	int i,j,n,point=0,point_be=0,point_out,point_out2,int_be=1,end=0,zero_num=0,zero_num2;
+{	
+int n;
+char input[7];
+	
+	int i,j,point=0,point_be=0,point_out,point_out2,int_be=1,end=0,zero_num=0,zero_num2;
 	int first = 1;
 	int R=0;
-	int R_tmp[32]={1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},tmp,tmp_c;
-	scanf("%s %d",input,&n);	
+	int tmp,tmp_c,R_tmp[32];	
+	while(scanf("%s %d",input,&n)!=EOF){
+		
+	R_tmp[0] = 1;
+	for(i=1;i<32;i++)R_tmp[i]=0;
+		first = 1;point=0;point_be=0;int_be=1;end=0;zero_num=0;first = 1;R=0;
 	for(i=0;i<6;i++)
 	{
 		if(point_be && input[i]!='0')
@@ -35,7 +41,7 @@ int main()
 		else
 			R += (input[i] - '0')*my_pow(10,4-i+point_be);
 		
-	}
+	}	
 	point_out = (5-point) * n;
 	zero_num = zero_num * n;
 	R_tmp[0] = 1;
@@ -55,8 +61,6 @@ int main()
 	for(i=31;i>=0;i--)
 	{
 		if(end)break;
-
-
 		if(first)
 		{
 			if((R_tmp[i]!=0) || ((point_out < (i+1)*4+1) &&(point_out >= i*4+1) ))
@@ -107,6 +111,7 @@ int main()
 		if(((point_out < (i+1)*4+1) &&(point_out >= i*4+1) ))
 		{
 			point_out2 = point_out-i*4;
+			zero_num2 = zero_num-i*4-1;
 			for(j=3;j>=0;j--)
 			{
 				if(point_out2-1 == j)	
@@ -118,7 +123,13 @@ int main()
 					}
 						
 					printf(".");
+					
 				}
+				if(zero_num2 == j)	
+						{
+							end = 1;
+							break;
+						}
 				printf("%d",(R_tmp[i]/my_pow(10,j))%10);
 			}
 		}
@@ -141,7 +152,9 @@ int main()
 		
 		}
 	}
+	printf("\n");
 	
+	}
 	
 	return 0;
 }
