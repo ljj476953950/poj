@@ -10,8 +10,23 @@
 </Folder>
 <Folder name="Other Files">
 </Folder>
-<Attribute topline="13" x="17" y="60">main.c</Attribute>
+<Attribute topline="16" x="6" y="31">main.c</Attribute>
 <FolderState>111</FolderState>
+<Breakpoint>
+	<File>main.c</File>
+	<Line>204</Line>
+	<Condition></Condition>
+</Breakpoint>
+<Breakpoint>
+	<File>main.c</File>
+	<Line>92</Line>
+	<Condition></Condition>
+</Breakpoint>
+<Breakpoint>
+	<File>main.c</File>
+	<Line>71</Line>
+	<Condition></Condition>
+</Breakpoint>
 <DefConfig>mingw5</DefConfig>
 <Builder name="mingw5" type="MinGW" version="1.0">
 	<TargetName>1001</TargetName>

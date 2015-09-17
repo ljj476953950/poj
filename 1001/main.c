@@ -12,11 +12,10 @@ int my_pow(int a,int b)
 
 int main()
 {	
-int n;
-char input[7];
-	
+	int n;
+	char input[7],buffer[129] = {0};
 	int i,j,point=0,point_be=0,point_out,point_out2,int_be=1,end=0,zero_num=0,zero_num2;
-	int first = 1;
+	int first = 1, first_num;
 	int R=0;
 	int tmp,tmp_c,R_tmp[32];	
 	while(scanf("%s %d",input,&n)!=EOF){
@@ -58,6 +57,56 @@ char input[7];
 		}
 	}
 	
+	for(i=31;i>=0;i--)
+	{
+		buffer[4*(31-i)] = R_tmp[i]/1000+'0';
+		buffer[4*(31-i)+1] = R_tmp[i]/100%10+'0';
+		buffer[4*(31-i)+2] = R_tmp[i]/10%10+'0';
+		buffer[4*(31-i)+3] = R_tmp[i]%10+'0';
+		if(first)
+		{
+			
+			if(R_tmp[i]!=0)
+			{
+				first=0;
+				first_num = 4*(31-i);
+				if(R_tmp[i]>=1000)
+					continue;
+				else if(R_tmp[i]>=100)
+					first_num += 1;
+				else if(R_tmp[i]>=10)
+					first_num += 2;
+				else
+					first_num += 3;
+			}
+		}
+			
+	}
+	
+	if(int_be)
+	{
+		buffer[128-point_out] = '\0';
+	}
+	else buffer[128-zero_num] = '\0';
+	
+	if(first_num>point_out)
+	{
+		buffer[point_out] = '\0';
+		printf("%s",&buffer[first_num]);
+		if(int_be)break;
+		else
+		printf(".");
+		printf("%s",&buffer[point_out+1]);
+	}
+		
+		
+	
+	//tmp = buffer[64];
+//	buffer[64] = '\0';
+//	printf("%s",buffer);
+//	buffer[128] =  '\0';
+//	printf("%s",&buffer[65]);
+/*
 	for(i=31;i>=0;i--)
 	{
 		if(end)break;
@@ -151,7 +200,7 @@ char input[7];
 			printf("%04d",R_tmp[i]);
 		
 		}
-	}
+	}*/
 	printf("\n");
 	
 	}
