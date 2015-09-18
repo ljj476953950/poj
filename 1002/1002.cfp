@@ -1,7 +1,7 @@
 <Project version="3.0">
-<Name>1001</Name>
+<Name>1002</Name>
 <Type>CUI</Type>
-<TargetName>1001</TargetName>
+<TargetName>1002</TargetName>
 <TargetType>exe</TargetType>
 <Folder name="Source Files">
 	<File>main.c</File>
@@ -10,26 +10,16 @@
 </Folder>
 <Folder name="Other Files">
 </Folder>
-<Attribute topline="78" x="5" y="31">main.c</Attribute>
+<Attribute topline="13" x="1" y="15">main.c</Attribute>
 <FolderState>111</FolderState>
 <Breakpoint>
 	<File>main.c</File>
-	<Line>204</Line>
-	<Condition></Condition>
-</Breakpoint>
-<Breakpoint>
-	<File>main.c</File>
-	<Line>92</Line>
-	<Condition></Condition>
-</Breakpoint>
-<Breakpoint>
-	<File>main.c</File>
-	<Line>71</Line>
+	<Line>39</Line>
 	<Condition></Condition>
 </Breakpoint>
 <DefConfig>mingw5</DefConfig>
 <Builder name="mingw5" type="MinGW" version="1.0">
-	<TargetName>1001</TargetName>
+	<TargetName>1002</TargetName>
 	<TargetType>exe</TargetType>
 	<TargetDir>mingw5</TargetDir>
 	<InterimDir>mingw5</InterimDir>
